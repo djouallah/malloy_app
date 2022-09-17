@@ -1,7 +1,7 @@
 [
   {
     "name": "nested",
-    "dataTables": ["Nested_Complex.parquet"],
+    "dataTables": ["complex_nest.parquet"],
     "modelPath": "./nested.malloy",
     "queryPath": "./nested-queries.malloy"
   }
