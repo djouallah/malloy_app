@@ -1,0 +1,15 @@
+source:Model is table('duckdb:complex_nest.parquet')
+{
+dimension : contractor_dim is L2.contractor
+            _year is L2.L3.`date`.year
+            
+measure : Budget is L2.budgethours.sum()
+          Budget_all is all(Budget)
+          Actual is L2.L3.L4.actualhours.sum()
+          Forecast is L2.L3.forecast.sum()
+Query : by_year is {
+    group_by : _year
+    aggregate : Budget_all,Actual,Forecast
+           
+                     }
+     }

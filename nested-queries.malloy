@@ -1,0 +1,9 @@
+import "nested.malloy"
+
+// --
+// Name: by_year
+Query : Model -> by_year + {
+    group_by : _year
+    aggregate : Budget_all,Actual,Forecast
+           
+                     }
